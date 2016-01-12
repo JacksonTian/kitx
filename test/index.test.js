@@ -21,7 +21,13 @@ describe('kitx', function () {
     });
   });
 
-  it('encode should ok', function () {
+  it('encode buffer should ok', function () {
+    var encoded = kit.encode('100');
+    expect(encoded.length).to.be(3);
+    expect(encoded.toString()).to.be('100');
+  });
+
+  it('encode number should ok', function () {
     var encoded = kit.encode(100);
     expect(encoded.length).to.be(3);
     expect(encoded.toString()).to.be('100');
