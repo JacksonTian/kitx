@@ -3,7 +3,7 @@
 const path = require('path');
 const expect = require('expect.js');
 
-const kit = require('../index');
+const kit = require('../');
 
 describe('kitx', function () {
   it('loadJSONSync should ok', function () {

@@ -2,7 +2,7 @@
   "name": "kitx",
   "version": "1.0.0",
   "description": "toolkit",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
@@ -26,6 +26,7 @@
   "devDependencies": {
     "co-mocha": "~1.1.2",
     "expect.js": "~0.3.1",
+    "istanbul": "~0.4.2",
     "mocha": "~2.3.4"
   }
 }
