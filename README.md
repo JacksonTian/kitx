@@ -16,5 +16,7 @@ var kit = require('kitx');
 ```
 
 ## API
-See
-- loadJSONSync(filepath)
+See [API docs](http://doxmate.cool/JacksonTian/kitx/api.html).
+
+## License
+The MIT license.
