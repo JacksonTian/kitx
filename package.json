@@ -1,0 +1,31 @@
+{
+  "name": "kitx",
+  "version": "1.0.0",
+  "description": "toolkit",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacksonTian/kitx.git"
+  },
+  "author": "Jackson Tian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JacksonTian/kitx/issues"
+  },
+  "homepage": "https://github.com/JacksonTian/kitx#readme",
+  "keywords": [
+    "toolkit",
+    "kit"
+  ],
+  "devDependencies": {
+    "co-mocha": "~1.1.2",
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4"
+  }
+}
