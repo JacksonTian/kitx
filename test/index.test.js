@@ -39,7 +39,7 @@ describe('kitx', function () {
   });
 
   it('sha1 should ok', function () {
-    var digest = kit.sha1('hello world', 'hex');
-    expect(digest).to.be('2aae6c35c94fcfb415dbe95f408b9ce91ee846ed');
+    var digest = kit.sha1('hello world', 'key', 'hex');
+    expect(digest).to.be('34dd234b92683593560528f6193ea68c8005f615');
   });
 });
