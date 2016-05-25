@@ -36,6 +36,9 @@ describe('kitx', function () {
   it('md5 should ok', function () {
     var digest = kit.md5('hello world', 'hex');
     expect(digest).to.be('5eb63bbbe01eeed093cb22bb8f5acdc3');
+    var unicode = '呵呵';
+    var result = kit.md5(unicode, 'hex');
+    expect(result).to.be('86d51ce7753a36079041fc15f7248035');
   });
 
   it('sha1 should ok', function () {
