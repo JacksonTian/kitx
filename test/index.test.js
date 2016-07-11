@@ -37,12 +37,39 @@ describe('kitx', function () {
     var digest = kit.md5('hello world', 'hex');
     expect(digest).to.be('5eb63bbbe01eeed093cb22bb8f5acdc3');
     var unicode = '呵呵';
-    var result = kit.md5(unicode, 'hex');
+    // the unicode will cause issue
+    var result = kit.md5(new Buffer(unicode), 'hex');
     expect(result).to.be('86d51ce7753a36079041fc15f7248035');
   });
 
   it('sha1 should ok', function () {
     var digest = kit.sha1('hello world', 'key', 'hex');
     expect(digest).to.be('34dd234b92683593560528f6193ea68c8005f615');
+  });
+
+  it('getIPv4', function () {
+    var address = kit.getIPv4();
+    expect(address).not.to.be('127.0.0.1');
+  });
+
+  it('random', function () {
+    var value = kit.random(0, 10);
+    expect(value).to.be.above(0);
+    expect(value).be.below(10);
+  });
+
+  it('pad2', function () {
+    expect(kit.pad2(0)).to.be('00');
+    expect(kit.pad2(99)).to.be('99');
+  });
+
+  it('pad3', function () {
+    expect(kit.pad3(0)).to.be('000');
+    expect(kit.pad3(99)).to.be('099');
+    expect(kit.pad3(999)).to.be('999');
+  });
+
+  it('getYYYYMMDD', function () {
+    expect(kit.getYYYYMMDD(new Date())).to.match(/\d{8}/);
   });
 });
