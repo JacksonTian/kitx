@@ -58,6 +58,12 @@ describe('kitx', function () {
     expect(value).be.below(10);
   });
 
+  it('makeNonce', function () {
+    var nonce = kit.makeNonce();
+    expect(nonce.length).to.be.above(10);
+    expect(nonce).not.to.be(kit.makeNonce());
+  });
+
   it('pad2', function () {
     expect(kit.pad2(0)).to.be('00');
     expect(kit.pad2(99)).to.be('99');
