@@ -49,6 +49,7 @@ describe('kitx', function () {
 
   it('getIPv4', function () {
     var address = kit.getIPv4();
+    expect(address).to.be.ok();
     expect(address).not.to.be('127.0.0.1');
   });
 
@@ -59,9 +60,20 @@ describe('kitx', function () {
   });
 
   it('makeNonce', function () {
-    var nonce = kit.makeNonce();
-    expect(nonce.length).to.be.above(10);
-    expect(nonce).not.to.be(kit.makeNonce());
+    var old = Math.random;
+    Math.random = function () {
+      return 1;
+    };
+    var nonce1 = kit.makeNonce();
+    var nonce2 = kit.makeNonce();
+    expect(nonce1.length).to.be.above(10);
+    expect(nonce1).not.to.be(nonce2);
+    Math.random = old;
+  });
+
+  it('sleep', function () {
+    var promise = kit.sleep(10);
+    expect(promise).to.have.property('then');
   });
 
   it('pad2', function () {
@@ -77,5 +89,9 @@ describe('kitx', function () {
 
   it('getYYYYMMDD', function () {
     expect(kit.getYYYYMMDD(new Date())).to.match(/\d{8}/);
+  });
+
+  it('getMac', function () {
+    expect(kit.getMac()).to.have.length(17);
   });
 });
