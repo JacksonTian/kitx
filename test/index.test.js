@@ -38,7 +38,7 @@ describe('kitx', function () {
     expect(digest).to.be('5eb63bbbe01eeed093cb22bb8f5acdc3');
     var unicode = '呵呵';
     // the unicode will cause issue
-    var result = kit.md5(new Buffer(unicode), 'hex');
+    var result = kit.md5(Buffer.from(unicode), 'hex');
     expect(result).to.be('86d51ce7753a36079041fc15f7248035');
   });
 
