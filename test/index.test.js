@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const { Readable } = require('stream');
 const expect = require('expect.js');
 
 const kit = require('../');
@@ -55,8 +56,7 @@ describe('kitx', function () {
 
   it('random', function () {
     var value = kit.random(0, 10);
-    expect(value).to.be.above(0);
-    expect(value).be.below(10);
+    expect(value >= 0 && value < 10).to.be.ok();
   });
 
   it('makeNonce', function () {
@@ -71,9 +71,11 @@ describe('kitx', function () {
     Math.random = old;
   });
 
-  it('sleep', function () {
-    var promise = kit.sleep(10);
-    expect(promise).to.have.property('then');
+  it('sleep', async function () {
+    var now = Date.now();
+    await kit.sleep(10);
+    var diff = Date.now() - now;
+    expect(diff >= 10).to.be.ok();
   });
 
   it('pad2', function () {
@@ -93,5 +95,17 @@ describe('kitx', function () {
 
   it('getMac', function () {
     expect(kit.getMac()).to.have.length(17);
+  });
+
+  it('readAll', async function () {
+    class MyReader extends Readable {
+      _read() {
+        this.push('hello world!');
+        this.push(null);
+      }
+    }
+
+    const value = await kit.readAll(new MyReader());
+    expect(value.toString()).to.be('hello world!');
   });
 });

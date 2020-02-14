@@ -1,6 +1,6 @@
 {
   "name": "kitx",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "toolkit",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "eslint --fix lib",
+    "lint": "eslint --fix lib test",
     "test": "mocha --reporter spec --timeout 3000 test/*.test.js",
     "test-cov": "nyc -r=lcov -r=html -r=text -r=json mocha -t 3000 -R spec test/*.test.js",
     "ci": "npm run test-cov && cat ./coverage/lcov.info | coveralls"
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "coveralls": "~2.11.9",
+    "eslint": "^6.8.0",
     "expect.js": "^0.3.1",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1"

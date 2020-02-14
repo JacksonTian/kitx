@@ -1,3 +1,5 @@
+import { Readable } from 'stream';
+
 interface Hash {
     (data: string|Buffer, encoding?: string|undefined): string|Buffer;
 }
@@ -35,3 +37,5 @@ export function random(min: number, max: number): number;
 export function sha1(data: string|Buffer, key: string, encoding?: string|undefined): string|Buffer;
 
 export function sleep(ms: number): Promise<void>;
+
+export function readAll(readable: Readable): Promise<Buffer>;
