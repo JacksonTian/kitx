@@ -11,7 +11,7 @@
     "lint": "eslint --fix lib test",
     "test": "mocha --reporter spec --timeout 3000 test/*.test.js",
     "test-cov": "nyc -r=lcov -r=html -r=text -r=json mocha -t 3000 -R spec test/*.test.js",
-    "ci": "npm run test-cov && cat ./coverage/lcov.info | coveralls"
+    "ci": "npm run test-cov && codecov"
   },
   "repository": {
     "type": "git",

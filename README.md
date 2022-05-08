@@ -2,7 +2,7 @@
 A Node.js toolkit.
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
+[![Node.js CI](https://github.com/JacksonTian/kitx/actions/workflows/node.js.yml/badge.svg)](https://github.com/JacksonTian/kitx/actions/workflows/node.js.yml)
 [![Coverage Status](https://coveralls.io/repos/JacksonTian/kitx/badge.svg?branch=master&service=github)](https://coveralls.io/github/JacksonTian/kitx?branch=master)
 [![npm download][download-image]][download-url]
 
