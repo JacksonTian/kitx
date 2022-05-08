@@ -3,7 +3,7 @@ A Node.js toolkit.
 
 [![NPM version][npm-image]][npm-url]
 [![Node.js CI](https://github.com/JacksonTian/kitx/actions/workflows/node.js.yml/badge.svg)](https://github.com/JacksonTian/kitx/actions/workflows/node.js.yml)
-[![Coverage Status](https://coveralls.io/repos/JacksonTian/kitx/badge.svg?branch=master&service=github)](https://coveralls.io/github/JacksonTian/kitx?branch=master)
+[![codecov](https://codecov.io/gh/JacksonTian/kitx/branch/master/graph/badge.svg?token=XqdL3E9piR)](https://codecov.io/gh/JacksonTian/kitx)
 [![npm download][download-image]][download-url]
 
 [npm-image]: https://img.shields.io/npm/v/kitx.svg?style=flat-square
