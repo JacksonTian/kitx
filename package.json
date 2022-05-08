@@ -28,7 +28,7 @@
     "kit"
   ],
   "dependencies": {
-    "@types/node": "^12.0.2"
+    "@types/node": "^17.0.31"
   },
   "devDependencies": {
     "codecov": "^3.8.3",
