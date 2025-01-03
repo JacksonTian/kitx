@@ -39,3 +39,7 @@ export function sha1(data: string | Buffer, key: string, encoding?: string | und
 export function sleep(ms: number): Promise<void>;
 
 export function readAll(readable: Readable): Promise<Buffer>;
+
+export function encrypt(data: string | Buffer, inputEncoding?: string | undefined, outputEncoding?: string | undefined) : string | Buffer;
+
+export function decrypt(encrypt: string | Buffer, inputEncoding?: string | undefined, outputEncoding?: string | undefined) : string | Buffer;
