@@ -1,4 +1,5 @@
 # kitx
+
 A Node.js toolkit.
 
 [![NPM version][npm-image]][npm-url]
@@ -8,15 +9,13 @@ A Node.js toolkit.
 
 [npm-image]: https://img.shields.io/npm/v/kitx.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/kitx
-[travis-image]: https://img.shields.io/travis/JacksonTian/kitx.svg?style=flat-square
-[travis-url]: https://travis-ci.org/JacksonTian/kitx
 [download-image]: https://img.shields.io/npm/dm/kitx.svg?style=flat-square
 [download-url]: https://npmjs.org/package/kitx
 
 ## Installation
 
 ```sh
-$ npm install kitx --save
+npm install kitx --save
 ```
 
 ## Usage
@@ -28,7 +27,9 @@ const kitx = require('kitx');
 ```
 
 ## API
+
 See [API docs](http://doxmate.cool/JacksonTian/kitx/api.html).
 
 ## License
+
 The MIT license.
