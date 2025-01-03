@@ -10,8 +10,7 @@
   "scripts": {
     "lint": "eslint --fix lib test",
     "test": "mocha --reporter spec --timeout 3000 test/*.test.js",
-    "test-cov": "nyc -r=lcov -r=html -r=text -r=json mocha -t 3000 -R spec test/*.test.js",
-    "ci": "npm run test-cov && codecov"
+    "test-cov": "nyc -r=lcov -r=html -r=text -r=json mocha -t 3000 -R spec test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +30,6 @@
     "@types/node": "^22.5.4"
   },
   "devDependencies": {
-    "codecov": "^3.8.3",
     "eslint": "^9.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^10.0.0",
