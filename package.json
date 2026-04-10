@@ -27,7 +27,7 @@
     "kit"
   ],
   "dependencies": {
-    "@types/node": "^22.5.4"
+    "@types/node": "^25.6.0"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
