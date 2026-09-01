@@ -60,15 +60,24 @@ describe('kitx', function () {
   });
 
   it('makeNonce', function () {
-    var old = Math.random;
-    Math.random = function () {
-      return 1;
+    var crypto = require('crypto');
+    var old = crypto.randomBytes;
+    var n = 0;
+    crypto.randomBytes = function (size) {
+      n++;
+      return Buffer.alloc(size, 0x11);
     };
     var nonce1 = kit.makeNonce();
     var nonce2 = kit.makeNonce();
     expect(nonce1.length).to.be.above(10);
     expect(nonce1).not.to.be(nonce2);
-    Math.random = old;
+    expect(n).to.be.above(1);
+    crypto.randomBytes = old;
+
+    var a = kit.makeNonce();
+    var b = kit.makeNonce();
+    expect(a).not.to.be(b);
+    expect(a).to.match(/^[0-9a-f]+$/);
   });
 
   it('sleep', async function () {
